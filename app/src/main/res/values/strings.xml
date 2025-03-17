@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Sentiment Analysis</string>
+
+    <!-- Button text for sentiment analysis -->
+    <string name="btn_analyze">🔍 Submit</string>
+
+    <!-- Hint text for the input field -->
+    <string name="input_hint">Enter your sentence…</string>
+
+    <!-- Default icon for displaying the analysis result -->
+    <string name="result_icon_desc">Sentiment Result Icon</string>
+    <string name="gemini_api_key">AIzaSyBk5XpBKRAh9QS7E7t4F3RQsc8TqHgL_qM</string>
+</resources>
