@@ -9,13 +9,24 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import com.google.gson.Gson
 import java.io.IOException
 
+/**
+ * GeminiAPI is a utility object that interacts with Google's Gemini API
+ * to analyze the sentiment of a given text input.
+ */
 object GeminiAPI {
-    private const val API_KEY = "AIzaSyCpAeJv7kQipl8IiGTsUSIlFJ2wBRMtL2Y"  // Thay API key thực tế của bạn
+    private const val API_KEY = "AIzaSyCpAeJv7kQipl8IiGTsUSIlFJ2wBRMtL2Y"
     private const val GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$API_KEY"
 
     private val client = OkHttpClient()
     private val gson = Gson()
 
+    /**
+     * Sends a request to the Gemini API to determine the sentiment of a given text.
+     *
+     * @param context The application context.
+     * @param prompt The input text whose sentiment needs to be analyzed.
+     * @param callback A function that receives the sentiment result and corresponding icon resource ID.
+     */
     fun generateResponse(context: Context, prompt: String, callback: (String?, Int?) -> Unit) {
         val jsonBody = """
         {
@@ -64,6 +75,9 @@ object GeminiAPI {
         })
     }
 
+    /**
+     * Data classes representing the structure of the API response.
+     */
     data class GeminiResponse(
         val candidates: List<Candidate>
     ) {
