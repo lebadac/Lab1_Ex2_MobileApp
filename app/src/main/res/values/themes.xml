@@ -2,15 +2,14 @@
 <resources>
 
     <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Màu chủ đạo của ứng dụng -->
+        <!-- Defines the primary color scheme of the application -->
         <item name="colorPrimary">@color/button_start</item>
         <item name="colorPrimaryVariant">@color/button_end</item>
         <item name="colorOnPrimary">@color/white</item>
-
-        <!-- Màu nền tổng thể của ứng dụng -->
+        <!-- Sets the default background color of the entire app -->
         <item name="android:windowBackground">@color/background_color</item>
 
-        <!-- Màu văn bản chính -->
+        <!-- Defines the default text color used in the app -->
         <item name="android:textColorPrimary">@color/black</item>
     </style>
 

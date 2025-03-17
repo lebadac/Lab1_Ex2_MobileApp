@@ -6,7 +6,7 @@
     android:padding="20dp"
     android:gravity="center"
     android:background="@color/background_color">
-
+    <!-- Input field for user to enter text -->
     <EditText
         android:id="@+id/inputText"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
+    <!-- Button to trigger sentiment analysis -->
     <Button
         android:id="@+id/btnAnalyze"
         android:layout_width="match_parent"
@@ -32,6 +32,7 @@
         android:textColor="@color/white"
         android:textSize="16sp" />
 
+    <!-- ImageView to display sentiment analysis result icon -->
     <ImageView
         android:id="@+id/resultIcon"
         android:layout_width="150dp"

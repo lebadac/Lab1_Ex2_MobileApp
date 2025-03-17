@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml is the central configuration file for an Android application.
+    It declares app permissions, components (activities, services, receivers),
+    and other essential metadata.
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-
+    <!-- Permission to allow the app to access the internet, needed for API calls -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -12,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-
+        <!-- Main Activity of the app -->
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"

@@ -1,13 +1,16 @@
 <resources>
+    <!-- Application name -->
     <string name="app_name">Sentiment Analysis</string>
 
-    <!-- Button text for sentiment analysis -->
+    <!-- Button text for sentiment analysis submission -->
     <string name="btn_analyze">🔍 Submit</string>
 
-    <!-- Hint text for the input field -->
+    <!-- Hint text for the input field where users enter a sentence -->
     <string name="input_hint">Enter your sentence…</string>
 
-    <!-- Default icon for displaying the analysis result -->
+    <!-- Content description for the sentiment result icon -->
     <string name="result_icon_desc">Sentiment Result Icon</string>
-    <string name="gemini_api_key">AIzaSyBk5XpBKRAh9QS7E7t4F3RQsc8TqHgL_qM</string>
+
+    <!-- API Key for Gemini API (Consider moving this to a secure place) -->
+    <string name="gemini_api_key">AIzaSyCpAeJv7kQipl8IiGTsUSIlFJ2wBRMtL2Y</string>
 </resources>
