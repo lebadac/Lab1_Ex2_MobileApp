@@ -14,9 +14,6 @@ import java.io.IOException
  * to analyze the sentiment of a given text input.
  */
 object GeminiAPI {
-    private const val API_KEY = "AIzaSyCpAeJv7kQipl8IiGTsUSIlFJ2wBRMtL2Y"
-    private const val GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$API_KEY"
-
     private val client = OkHttpClient()
     private val gson = Gson()
 
@@ -28,6 +25,10 @@ object GeminiAPI {
      * @param callback A function that receives the sentiment result and corresponding icon resource ID.
      */
     fun generateResponse(context: Context, prompt: String, callback: (String?, Int?) -> Unit) {
+        val apiKey = context.getString(R.string.gemini_api_key) // Fetch API key from strings.xml
+        val geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$apiKey"
+
+        // JSON body to send to Gemini API
         val jsonBody = """
         {
             "contents": [
@@ -44,10 +45,11 @@ object GeminiAPI {
 
         val requestBody = jsonBody.toRequestBody("application/json".toMediaTypeOrNull())
         val request = Request.Builder()
-            .url(GEMINI_URL)
+            .url(geminiUrl) // Using predefined URL with API key
             .post(requestBody)
             .build()
 
+        // Execute the API call asynchronously
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("GeminiAPI", "API Call Failed: ${e.message}")
@@ -57,9 +59,12 @@ object GeminiAPI {
             override fun onResponse(call: Call, response: Response) {
                 response.body?.string()?.let { jsonResponse ->
                     Log.d("GeminiAPI", "API Response: $jsonResponse")
+                    // Parse API response
                     val parsedResponse = gson.fromJson(jsonResponse, GeminiResponse::class.java)
                     val outputText = parsedResponse.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text?.trim()
                     Log.d("GeminiAPI", "Parsed Output: $outputText")
+
+                    // Map sentiment result to corresponding icon
                     val sentimentIconId: Int? = when (outputText) {
                         "Positive" -> R.drawable.ic_happy
                         "Negative" -> R.drawable.ic_sad
@@ -94,3 +99,4 @@ object GeminiAPI {
         )
     }
 }
+
