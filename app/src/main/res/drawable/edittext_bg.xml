@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This XML defines a custom drawable shape for a UI element (e.g., EditText background).
+    - It has a solid white background.
+    - A border (stroke) with a width of 2dp and a light gray color (#CCCCCC).
+    - Rounded corners with a 10dp radius.
+    - Left and right padding of 10dp.
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <!-- Set the background color -->
+    <solid android:color="@color/white"/>
+
+    <!-- Define the border (stroke) -->
+    <stroke android:width="2dp" android:color="#CCCCCC"/>
+
+    <!-- Apply rounded corners -->
+    <corners android:radius="10dp"/>
+
+    <!-- Add padding for better spacing -->
+    <padding android:left="10dp" android:right="10dp"/>
+</shape>

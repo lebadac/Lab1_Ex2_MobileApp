@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Màu chủ đạo của ứng dụng -->
+        <item name="colorPrimary">@color/button_start</item>
+        <item name="colorPrimaryVariant">@color/button_end</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Màu nền tổng thể của ứng dụng -->
+        <item name="android:windowBackground">@color/background_color</item>
+
+        <!-- Màu văn bản chính -->
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+</resources>
